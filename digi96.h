@@ -1,0 +1,83 @@
+#define RME_VENDOR_ID		0x10ee
+#define RME_DIGI96		0x3fc0
+#define RME_DIGI96_8		0x3fc1
+#define RME_DIGI96_PRO		0x3fc2
+#define RME_DIGI96_PAD		0x3fc3
+
+/*
+ * Control register pCTRL1
+ */
+#define CTRL1_STARTPLAY		0x00000001
+#define CTRL1_STARTREC		0x00000002
+#define CTRL1_GAIN		0x0000000c
+#define CTRL1_MODE24_PLAY	0x00000010
+#define CTRL1_MODE24_REC 	0x00000020
+#define CTRL1_PLAYBM		0x00000040
+#define CTRL1_RECBM		0x00000080
+#define CTRL1_ADAT		0x00000100
+#define CTRL1_FREQ		0x00000600
+#define	CTRL1_FREQ32		0x00000200
+#define	CTRL1_FREQ44		0x00000400
+#define	CTRL1_FREQ48		0x00000600
+#define CTRL1_DS		0x00000800
+#define CTRL1_PRO		0x00001000
+#define CTRL1_EMP		0x00002000
+#define CTRL1_SEL		0x00004000
+#define CTRL1_MASTER		0x00008000
+#define CTRL1_PD		0x00010000
+#define CTRL1_INPUTSEL		0x00060000
+#define CTRL1_INPUTSHIFT		17
+#define CTRL1_THRU		0x07f80000
+#define CTRL1_AC3		0x08000000
+#define CTRL1_MONITOR		0x30000000
+#define CTRL1_ISEL		0x40000000
+#define CTRL1_IDIS		0x80000000
+
+/*
+ * Control register pCTRL2
+ */
+#define CTRL2_WSEL		0x00000001
+#define CTRL2_ANALOG		0x00000002	/* PAD only */
+#define CTRL2_FREQAD		0x0000001c	/* PAD */
+#define CTRL2_PD2		0x00000020
+
+/* Next ones are only for new Digi96/8Pro (blue board) and PAD */
+#define CTRL2_DAC_EN		0x00000040
+#define CTRL2_CLATCH		0x00000080
+#define CTRL2_CCLK		0x00000100
+#define CTRL2_CDATA		0x00000200
+
+/*
+ * For reads from the pPLAYPOS and pRECPOS registers
+ */
+
+#define POS_PLAYIRQ		0x80000000
+#define POS_AUTOSYNC		0x40000000
+#define POS_FBITS		0x38000000
+#define POS_FSHIFT			27
+#define POS_ERF			0x04000000
+#define POS_CONSTANT11		0x03000000
+#define POS_LOCK		0x00800000
+#define POS_DEVID		0x00600000
+#define POS_CONSTANT000		0x008c0000
+#define POS_TOUT		0x00020000
+#define POS_RECIRQ		0x00010000
+#define POS_ADDR		0x000fffff
+
+/* IO memory size */
+#define DIGI96_IOMEMSZ 		0x60000
+/* Playback and capture buffer size */
+#define DIGI96_BUFSZ 		0x10000
+/* IO offsets */
+#define DIGI96_PLAYBUF 		0x0
+#define DIGI96_RECBUF 		0x10000
+#define DIGI96_CTRL1 		0x20000
+#define DIGI96_CTRL2 		0x20004
+#define DIGI96_PLAYACK 		0x20008
+#define DIGI96_RECACK 		0x2000c
+#define DIGI96_GET_PLAYPOS 	0x20000
+#define DIGI96_GET_RECPOS 	0x30000
+#define DIGI96_SET_PLAYPOS 	0x40000
+#define DIGI96_SET_RECPOS 	0x50000
+#define DIGI96_RESET_PLAY 	0x4fffc
+#define DIGI96_RESET_REC 	0x5fffc
