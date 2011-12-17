@@ -47,6 +47,10 @@
 #define CTRL2_CCLK		0x00000100
 #define CTRL2_CDATA		0x00000200
 
+/* Volume control */
+#define DIGI96_AD1852_VOL_BITS 	14
+#define DIGI96_AD1855_VOL_BITS 	10
+
 /*
  * For reads from the pPLAYPOS and pRECPOS registers
  */
@@ -62,7 +66,7 @@
 #define POS_CONSTANT000		0x008c0000
 #define POS_TOUT		0x00020000
 #define POS_RECIRQ		0x00010000
-#define POS_ADDR		0x000fffff
+#define POS_ADDR		0x0000ffff
 
 /* IO memory size */
 #define DIGI96_IOMEMSZ 		0x60000
